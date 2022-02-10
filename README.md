@@ -1,1 +1,33 @@
 # SQL-Mini-Exercise
+
+- psql
+- CREATE DATABASE "Digital Career Institute";
+- ALTER DATABASE "Digital Career Institute" RENAME TO dci;
+- psql dci
+- CREATE SCHEMA students;
+- CREATE SCHEMA courses;
+- CREATE SCHEMA partners;
+- CREATE SCHEMA sales;
+- CREATE TABLE students.grades(subject varchar(50), max int, actual int);
+- CREATE TABLE students.evaluations(name varchar(255), description varchar(255), date date);
+- CREATE TABLE courses.itcourses(name varchar(255), description varchar(255), start_date date, max_participants int);
+- CREATE TABLE courses.languagecourses(name varchar(255), description varchar(255), start_date date, max_participants int);
+- CREATE TABLE partners.orderpartners(name varchar(255), location varchar(255), iban varchar(50));
+- CREATE TABLE partners.deliverypartners(name varchar(255), location varchar(255), iban varchar(50));
+- CREATE TABLE sales.transactions(partner varchar(255), date date, amount float);
+- CREATE TABLE sales.orders(partner varchar(255), date date, amount int, price float);
+- INSERT INTO students.grades VALUES ('HTML Introduction', 100, 85), ('HTML Introduction', 100, 92), ('Datastructures', 100, 74), ('Algorithms', 100, 98);
+- INSERT INTO students.evaluations VALUES ('Tina', 'Very good', '10-02-2022'), ('Nina', 'Very good', '10-02-2022'), ('Sandra', 'Excellent', '07-02-2022'), ('Stephanie', 'Excellent', '07-02-2022');
+- INSERT INTO courses.itcourses VALUES ('HTML Introduction', 'An Introduction to HTML', '10-02-2022', 20), ('Datastructures', 'Everything about datastructures', '10-02-2022', 15), ('Algorithms', 'Fundamentals of algorithms', '07-02-2022', 15), ('Angular', 'The best Angular course ever', '07-02-2022', 30);
+- INSERT INTO courses.languagecourses VALUES ('French I', 'For beginners', '10-02-2022', 30), ('French II', 'For intermediate learners', '10-02-2022', 25), ('Turkish III', 'Conversation practice and presentation training', '07-02-2022', 12), ('Russian I', 'For beginners', '07-02-2022', 30);
+- INSERT INTO partners.orderpartners (name, location) VALUES ('Company 1', 'Cologne'), ('Small startup', 'Budapest'), ('Anja Schmidt', 'Leipzig'), ('Company 2', 'Florence');
+- INSERT INTO partners.deliverypartners (name, location) VALUES ('Small Company', 'Rotterdam'), ('Martin Meier', 'Flensburg'), ('Anja Schmidt', 'Leipzig'), ('Company 3', 'Warsaw');
+- INSERT INTO sales.transactions VALUES ('Company 1', '10-02-2022', 347.85), ('Company 2', '09-02-2022', 766.00), ('Big company', '09-02-2022', 5002.34), ('Other company', '08-02-2022', 442.99);
+- INSERT INTO sales.orders VALUES ('Company 1', '10-02-2022', 5, 347.85), ('Anja Schmidt', '09-02-2022', 200, 56.79), ('Swedish company 3', '09-02-2022', 50, 6892.90), ('Swedish company 4', '08-02-2022', 40, 675.00);
+- CREATE TABLE partners.transactions(partner varchar(255), date date, amount float);
+- INSERT INTO partners.transactions VALUES ('Nonexistent partner', '01-01-1900', -1.00);
+- SELECT * FROM partners.transactions;
+- TRUNCATE TABLE partners.transactions;
+- SELECT * FROM partners.transactions;
+- DROP TABLE partners.transactions;
+- SELECT * FROM partners.transactions;
